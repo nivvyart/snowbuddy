@@ -14,4 +14,5 @@
 #
 
 class Resort < ApplicationRecord
+  has_many :messages
 end
