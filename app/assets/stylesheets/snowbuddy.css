@@ -19,24 +19,23 @@ body {
 .nav-links,
 .logo {
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
-}
-.main-nav li {
-    text-align: center;
-    margin: 15px auto;
-}
-.logo {
+    color: rgba(0, 0, 0, 0.7);
     display: inline-block;
     font-size: 22px;
     margin-top: 10px;
     margin-left: 20px;
 }
+.main-nav li {
+    text-align: center;
+    margin: 15px auto;
+}
+
 .navbar-toggle {
     position: absolute;
     top: 10px;
     right: 20px;
     cursor: pointer;
-    color: rgba(255,255,255,0.8);
+    color: rgba(0,0,0,0.8);
     font-size: 24px;
 }
 .main-nav {
@@ -78,3 +77,40 @@ body {
     .nav-links:hover {
         color: rgba(255, 255, 255, 1);
     }
+
+/* Home Screen video */
+
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
