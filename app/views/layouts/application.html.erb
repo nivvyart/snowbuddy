@@ -4,12 +4,39 @@
     <title>Snowbuddy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
   <body>
+    <div class="container">
+      <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <%= image_tag("Snowbuddy0.0.1.svg", :class => "logo")  %>
+        <ul class="main-nav" id="js-menu">
+          <li>
+            <%= link_to 'Home', root_path, :class => "nav-links" %>
+          </li>
+          <li>
+            <%= link_to 'Resorts', root_path, :class => "nav-links" %>
+          </li>
+          <li>
+            <%= link_to 'Users', root_path, :class => "nav-links" %>
+          </li>
+        </ul>
+      </nav>
+
+
+
     <%= yield %>
+    </div>
   </body>
+
+
 </html>

@@ -1,4 +1,6 @@
 class ResortsController < ApplicationController
-  def home
+  def index
+    @resorts = Resort.all
+
   end
 end
