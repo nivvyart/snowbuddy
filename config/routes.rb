@@ -6,4 +6,9 @@
 Rails.application.routes.draw do
   root :to => 'pages#home'
   resources :resorts
+  get '/about' => 'pages#about'
+
+  get '/resorts/:id' => 'resorts#show', :as => 'resort_id'
+
+
 end

@@ -3,4 +3,8 @@ class ResortsController < ApplicationController
     @resorts = Resort.all
 
   end
+
+  def show
+    @resort = Resort.find params[:id]
+  end
 end
