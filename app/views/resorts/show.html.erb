@@ -1,2 +1,22 @@
-<%= @resort.name %>
 <%= image_tag @resort.image, :class => 'resort-background' if @resort.image.present? %>
+<div class="resort-container">
+  <h1><%= @resort.name %></h1>
+  <ul>
+    <li>Region: <%= @resort.region %> </li>
+    <li>Homepage: <%= @resort.homepage %></li>
+    <li>Number of Lifts: <%= @resort.lifts %></li>
+    <li>peak Elevation: <%= @resort.elevation %></li>
+    <li>Skiable area <%= @resort.area %> acres</li>
+  </ul>
+
+<h2>Buddies looking for Buddies</h2>
+  <% @message.each do |message| %>
+    <% if message.resort_id == params[:id].to_i %>
+    <h4><%= message.user_id %> <%= message.created_at %></h4>
+    <p><%= message.message %></p>
+
+    <% end %>
+  <% end %>
+
+
+</div>

@@ -76,7 +76,7 @@ body {
   .nav-links:hover {
       color: rgba(255, 255, 255, 1);
   }
-
+}
 /* Home Screen video */
 
 /* Style the video: 100% width and height to cover the entire window */
@@ -107,4 +107,14 @@ body {
 .home-search h1{
   padding-top: 18px;
   color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Resort Page styling */
+.resort-container {
+  width: 960px;
+  padding: 2em;
+  height: 900px;
+  margin: 0 auto;
+  background: linear-gradient(260deg, #3F76A6 0%, #A0C3D9 100%);
 }
