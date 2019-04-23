@@ -23,11 +23,18 @@
 
 Rails.application.routes.draw do
   root :to => 'pages#home'
+  get '/about' => 'pages#about'
+
+  #resorts
   resources :resorts
+  get '/resorts/:id' => 'resorts#show', :as => 'resort_id'
+
+  #users
   resources :users
   get '/signup' => 'users#new'
-  get '/about' => 'pages#about'
-  get '/resorts/:id' => 'resorts#show', :as => 'resort_id'
+  post '/signup', to: 'users#create'
+
+  
 
 
 end
