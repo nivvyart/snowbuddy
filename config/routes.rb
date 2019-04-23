@@ -4,6 +4,7 @@
 #   root GET  /           pages#home
 
 Rails.application.routes.draw do
+  get 'users/new'
   root :to => 'pages#home'
   resources :resorts
   get '/about' => 'pages#about'

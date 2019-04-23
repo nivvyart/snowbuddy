@@ -9,7 +9,7 @@ body {
 }
 .navbar {
   font-size: 18px;
-  background-image: linear-gradient(260deg, #8BB4D9 0%, #A0C3D9 100%);
+  background-image: linear-gradient(260deg, #3F76A6 0%, #A0C3D9 100%);
   padding-bottom: 10px;
 }
 .main-nav {
@@ -98,7 +98,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(63, 118, 166, 0.3);
   color: #f1f1f1;
   text-align: center;
   border-radius: 40px;
