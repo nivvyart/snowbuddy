@@ -1,6 +1,7 @@
 User.destroy_all
 u1 = User.create :email => 'adrian@snowbuddy.com', :password => 'asdasd'
-u2 = User.create :email => 'nico@snowbuddy.com', :password => 'asdasd'
+u2 = User.create :email => 'roy@snowbuddy.com', :password => 'asdasd'
+u3 = User.create :email => 'nico@snowbuddy.com', :password => 'asdasd'
 
 p "user created"
 
@@ -12,7 +13,27 @@ r3 = Resort.create :name => 'Arapahoe Basin', :region => 'Colorado', :homepage =
 p "resort created"
 
 Message.destroy_all
-m1 = Message.create :message => 'Looking for Buddy for A-Basin'
-m2 = Message.create :message => 'Looking for Buddy for Mt hutt'
+m1 = Message.create :message => 'Anyone riding Mt Hutt Today?'
+m2 = Message.create :message => 'Looking for Buddy for Loveland!'
+m3 = Message.create :message => 'Anyone looking for a buddy for A-basin!?'
 
 p "message created"
+
+#this is enough for 1 resort 1 message
+#nico looking for a buddy @ mount hutt
+r1.messages << m1
+u3.messages << m1
+
+p "Nico looking for Mt Hutt Buddy added"
+
+#Roy looking for a buddy @ Loveland
+r2.messages << m2
+u2.messages << m2
+
+p "Roy looking for Loveland buddy added"
+
+#Roy looking for a buddy @ Loveland
+r3.messages << m3
+u1.messages << m3
+
+p "Adrian looking for A-basin buddy added"

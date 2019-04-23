@@ -21,7 +21,7 @@
         <%= link_to image_tag("Snowbuddy0.0.1.svg", :class => "logo"), root_path  %>
         <ul class="main-nav" id="js-menu">
           <li>
-            <%= link_to 'About', root_path, :class => "nav-links" %>
+            <%= link_to 'About', about_path, :class => "nav-links" %>
           </li>
           <li>
             <%= link_to 'Resorts', resorts_path, :class => "nav-links" %>
@@ -33,7 +33,7 @@
             </li>
           <% else %>
             <li>
-              <%= link_to 'Login/Signup', root_path, :class => "nav-links" %>
+              <%= link_to 'Login/Signup', login_path, :class => "nav-links" %>
             </li>
           <% end %>
         </ul>
