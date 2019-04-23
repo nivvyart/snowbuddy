@@ -22,6 +22,7 @@
 #   resort_id GET    /resorts/:id(.:format)      resorts#show
 
 Rails.application.routes.draw do
+  get 'sessions/new'
   root :to => 'pages#home'
   get '/about' => 'pages#about'
 
@@ -30,11 +31,15 @@ Rails.application.routes.draw do
   get '/resorts/:id' => 'resorts#show', :as => 'resort_id'
 
   #users
-  resources :users
+  resources :users # :except or :only => [:new, :xxx]
   get '/signup' => 'users#new'
-  post '/signup', to: 'users#create'
+  post '/signup' => 'users#create'
+  get '/account' => 'users#show'
 
-  
+  #session control
+  get    '/login' => 'sessions#new'
+  post   '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
 
 end

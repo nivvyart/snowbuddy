@@ -18,7 +18,7 @@
         <span class="navbar-toggle" id="js-navbar-toggle">
             <i class="fas fa-bars"></i>
         </span>
-        <%= image_tag("Snowbuddy0.0.1.svg", :class => "logo")  %>
+        <%= link_to image_tag("Snowbuddy0.0.1.svg", :class => "logo"), root_path  %>
         <ul class="main-nav" id="js-menu">
           <li>
             <%= link_to 'About', root_path, :class => "nav-links" %>
@@ -26,9 +26,16 @@
           <li>
             <%= link_to 'Resorts', resorts_path, :class => "nav-links" %>
           </li>
-          <li>
-            <%= link_to 'Users', root_path, :class => "nav-links" %>
-          </li>
+          <% if logged_in? %>
+            <li>
+            <%= link_to "Account", account_path, :class => "nav-links" %>
+            <%= link_to "Log out", logout_path, method: :delete, :class => "nav-links" %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to 'user/login/needstobeupdatedlul', root_path, :class => "nav-links" %>
+            </li>
+          <% end %>
         </ul>
       </nav>
         <%= yield %>
