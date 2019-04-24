@@ -1,31 +1,53 @@
 <%= image_tag "skiandboard", :class => 'resort-background' if @resort.image.present? %>
 <div class="resort-container">
-  <h1><%= @resort.name %></h1>
-  <ul>
-    <li>Region: <%= @resort.region %> </li>
-    <li>Homepage: <%= @resort.homepage %></li>
-    <li>Number of Lifts: <%= @resort.lifts %></li>
-    <li>peak Elevation: <%= @resort.elevation %></li>
-    <li>Skiable area <%= @resort.area %> acres</li>
-  </ul>
-
-  <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" /><div id="wf-weatherfeed"><iframe style="overflow:hidden;border:none;" allowtransparency="true" height="272" width="469" src="//www.snow-forecast.com/resorts/<%=@resort.name.gsub(" ", "-")%>/forecasts/feed/mid/m" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div>
-
-<h2>Buddies looking for Buddies</h2>
-  <% @resort.messages.order(:id => 'desc').each do |message| %>
-    <% if message.resort_id == params[:id].to_i %>
-    <h4><%= message.user.email %> <%= message.created_at.in_time_zone('Sydney').strftime("%H:%M %B %d, %Y") %></h4>
-    <p><%= message.message %></p>
+  <div class="resort-content">
+    <div class="resort-info">
+      <h1><%= @resort.name %></h1>
+      <ul>
+        <li>Region: <%= @resort.region %> </li>
+        <li>Homepage: <%= link_to @resort.homepage, @resort.homepage %></li>
+        <li>Number of Lifts: <%= @resort.lifts %></li>
+        <li>Peak Elevation: <%= @resort.elevation %></li>
+        <li>Skiable area <%= @resort.area %> acres</li>
+      </ul>
+    </div>
+    <div class="resort-weather">
+      <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" /><div id="wf-weatherfeed"><iframe style="overflow:hidden;border:none;" allowtransparency="true" height="272" width="469" src="//www.snow-forecast.com/resorts/<%=@resort.name.gsub(" ", "-")%>/forecasts/feed/mid/m" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div>
+    </div>
+    <div class="resort-map">
+      <%= image_tag @resort.image, :class => 'resort-map-image' if @resort.image.present? %>
+    </div>
+  </div>
+  <h2>Buddies looking for Buddies</h2>
+    <% @resort.messages.order(:id => 'desc').each do |message| %>
+      <% if message.resort_id == params[:id].to_i %>
+        <h4><%= message.user.email %> <%= message.created_at.in_time_zone('Sydney').strftime("%H:%M %B %d, %Y") %></h4>
+        <p><%= message.message %></p>
+      <% end %>
     <% end %>
+    <% if logged_in? %>
+      <li>
+        <h2>post message</h2>
+        <%= form_for Message.new do |f| %>
+        <%= f.label :message %>
+        <%= f.text_area :message %>
+        <%= hidden_field_tag :resort_id, @resort.id %>
+        <%= f.submit %>
+      </li>
+    <% end %>
+    <% else %>
+        <h2>Login to post a message</h2>
+        <%= form_for(:session, url: login_path) do |f| %>
+
+          <%= f.label :email %>
+          <%= f.email_field :email%>
+
+          <%= f.label :password %>
+          <%= f.password_field :password %>
+
+          <%= f.submit "Log in" %>
+        <% end %>
+
+        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   <% end %>
-
-<h2>post message</h2>
-
-<%= form_for Message.new do |f| %>
-<%= f.label :message %>
-<%= f.text_area :message %>
-<%= hidden_field_tag :resort_id, @resort.id %>
-<%= f.submit %>
-<% end %>
-
 </div>
