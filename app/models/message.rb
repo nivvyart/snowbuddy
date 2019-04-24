@@ -11,6 +11,6 @@
 #
 
 class Message < ApplicationRecord
-  has_many :users
-  belongs_to :resort
+  belongs_to :user, :optional => true
+  belongs_to :resort, :optional => true
 end

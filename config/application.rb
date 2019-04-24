@@ -29,5 +29,9 @@ module Snowbuddy
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    #set DB timezone
+   config.timezone_zone = "Sydney"
+   # config.active_record.default_timezone = 'Australia/Sydney'
   end
 end

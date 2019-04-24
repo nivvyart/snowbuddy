@@ -9,15 +9,20 @@ Resort.destroy_all
 r1 = Resort.create :name => 'Mount Hutt', :region => 'New Zealand', :homepage => 'https://www.mthutt.co.nz/', :lifts => 5, :elevation => '2190', :area => '365', :image => 'https://www.nzski.com/media/1658/mh-trail-map.jpg?quality=80&width=1600&height=900&mode=crop'
 r2 = Resort.create :name => 'Loveland', :region => 'Colorado', :homepage => 'http://www.skiloveland.com/', :lifts => 10, :elevation => '3965', :area => '1800', :image => 'https://skimap.org/data/515/2200/1536424485.jpg'
 r3 = Resort.create :name => 'Arapahoe Basin', :region => 'Colorado', :homepage => 'http://arapahoebasin.com/', :lifts => 9, :elevation => '3978', :area => '1458', :image => 'https://skimap.org/data/513/2200/1533603005.jpg'
+r4 = Resort.create :name => 'Turoa', :region => 'New Zealand', :homepage => 'https://www.mtruapehu.com/turoa', :lifts => 5, :elevation => '2797', :area => '500', :image => 'https://skimap.org/data/1095/2205/1502185116jpg_render.jpg'
+r5 = Resort.create :name => 'Whakapapa', :region => 'New Zealand', :homepage => 'https://www.mtruapehu.com/whakapapa', :lifts => 8, :elevation => '2797', :area => '550', :image => 'https://skimap.org/data/1094/3230/1535605654jpg_render.jpg'
+#r6 = Resort.create :name => 'Arapahoe Basin', :region => 'Colorado', :homepage => 'http://arapahoebasin.com/', :lifts => 9, :elevation => '3978', :area => '1458', :image => 'https://skimap.org/data/513/2200/1533603005.jpg'
+#r7 = Resort.create :name => 'Arapahoe Basin', :region => 'Colorado', :homepage => 'http://arapahoebasin.com/', :lifts => 9, :elevation => '3978', :area => '1458', :image => 'https://skimap.org/data/513/2200/1533603005.jpg'
+#r8 = Resort.create :name => 'Arapahoe Basin', :region => 'Colorado', :homepage => 'http://arapahoebasin.com/', :lifts => 9, :elevation => '3978', :area => '1458', :image => 'https://skimap.org/data/513/2200/1533603005.jpg'
 
 p "resort created"
 
 Message.destroy_all
-m1 = Message.create :message => 'Anyone riding Mt Hutt Today?'
-m2 = Message.create :message => 'Looking for Buddy for Loveland!'
-m3 = Message.create :message => 'Anyone looking for a buddy for A-basin!?'
-m4 = Message.create :message => 'Looking for park buddy today!'
-m5 = Message.create :message => 'New too A Basin, can someone show me around?'
+m1 = Message.create :message => 'Anyone riding Mt Hutt Today?'#, :created_at => Time.now
+m2 = Message.create :message => 'Looking for Buddy for Loveland!'#, :created_at => Time.now
+m3 = Message.create :message => 'Anyone looking for a buddy for A-basin!?'#, :created_at => Time.now
+m4 = Message.create :message => 'Looking for park buddy today!'#, :created_at => Time.now
+m5 = Message.create :message => 'New too A Basin, can someone show me around?'#, :created_at => Time.now
 
 p "message created"
 

@@ -12,13 +12,20 @@
   <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" /><div id="wf-weatherfeed"><iframe style="overflow:hidden;border:none;" allowtransparency="true" height="272" width="469" src="//www.snow-forecast.com/resorts/<%=@resort.name.gsub(" ", "-")%>/forecasts/feed/mid/m" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div>
 
 <h2>Buddies looking for Buddies</h2>
-  <% @message.each do |message| %>
+  <% @resort.messages.order(:id => 'desc').each do |message| %>
     <% if message.resort_id == params[:id].to_i %>
-    <h4><%= message.user_id %> <%= message.created_at %></h4>
+    <h4><%= message.user.email %> <%= message.created_at.in_time_zone('Sydney').strftime("%H:%M %B %d, %Y") %></h4>
     <p><%= message.message %></p>
-
     <% end %>
   <% end %>
 
+<h2>post message</h2>
+
+<%= form_for Message.new do |f| %>
+<%= f.label :message %>
+<%= f.text_area :message %>
+<%= hidden_field_tag :resort_id, @resort.id %>
+<%= f.submit %>
+<% end %>
 
 </div>
