@@ -111,7 +111,7 @@ body {
 
 
 /* Resort Page styling */
-.resort-container {
+.resort-container, .user-container {
   width: 960px;
   padding: 2em;
   height: 900px;

@@ -1,3 +1,5 @@
+
+<div class="resort-container">
 <h1>All Resorts</h1>
 
 <% @resorts.each do |resort| %>
@@ -5,3 +7,4 @@
     <%= link_to resort.name, resort_path(resort.id) %>.
   </p>
 <% end %>
+</div>
