@@ -127,3 +127,5 @@ body {
 .resort-map-image {
   width: 890px;
 }
+
+#myImg:hover {opacity: 0.8;}
