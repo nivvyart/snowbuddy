@@ -1,4 +1,7 @@
-<%= image_tag "skiandboard", :class => 'resort-background' if @resort.image.present? %>
+<%= image_tag "skiandboard", :class => 'resort-background'%>
+
+
+
 <div class="resort-container">
   <div class="resort-content">
     <div class="resort-info">
@@ -17,28 +20,18 @@
 
 
     <div class="resort-map">
-      <%= image_tag @resort.image, :class => 'resort-map-image', :id => 'myImg' if @resort.image.present? %>
+      <%= image_tag @resort.image, :class => 'resort-map-image', :id => 'myImg', :alt => "#{@resort.name} Trail Map" if @resort.image.present? %>
     </div>
 
-
-    <!-- Trigger the Modal -->
-    <!-- <img id="myImg" src="img_snow.jpg" alt="Snow" style="width:100%;max-width:300px"> -->
-
-    <!-- The Modal -->
-    <!-- <div id="myModal" class="modal"> -->
-
-      <!-- The Close Button -->
-      <!-- <span class="close">&times;</span> -->
-
-      <!-- Modal Content (The Image) -->
-      <!-- <img class="modal-content" id="img01"> -->
-
-      <!-- Modal Caption (Image Text) -->
-      <!-- <div id="caption"></div> -->
-    <!-- </div> -->
-
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img01">
+          <div id="caption"></div>
+        </div>
 
   </div>
+
   <h2>Buddies looking for Buddies</h2>
     <% @resort.messages.order(:id => 'desc').each do |message| %>
       <% if message.resort_id == params[:id].to_i %>
