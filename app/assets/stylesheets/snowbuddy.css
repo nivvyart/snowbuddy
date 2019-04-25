@@ -6,7 +6,7 @@
   border: 1px solid transparent;
 }
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .navbar {
   font-size: 18px;
@@ -88,7 +88,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(63, 118, 166, 0.3);
+  background: rgba(239, 239, 239, 0.5);
   color: #f1f1f1;
   text-align: center;
   border-radius: 40px;
@@ -258,6 +258,7 @@ margin-left: 1em;
 /* Resort Index specific styling */
 .resort-thumbnail img {
   height: 200px;
+  width: 400px;
 }
 
 .resort-list {
@@ -265,4 +266,13 @@ margin-left: 1em;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  background-color: #C5D8F3;
+  padding: 1em;
+}
+
+
+/* About page styling */
+
+.about-container p {
+  font-size: 17px;
 }
