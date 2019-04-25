@@ -1,7 +1,7 @@
 User.destroy_all
-u1 = User.create :email => 'adrian@snowbuddy.com', :password => 'asdasd'
-u2 = User.create :email => 'roy@snowbuddy.com', :password => 'asdasd'
-u3 = User.create :email => 'nico@snowbuddy.com', :password => 'asdasd'
+u1 = User.create :email => 'adrian@snowbuddy.com', :password => 'asdasd', :nickname => 'Nivvy'
+u2 = User.create :email => 'roy@snowbuddy.com', :password => 'asdasd', :nickname => 'Colorado Kid'
+u3 = User.create :email => 'nico@snowbuddy.com', :password => 'asdasd', :nickname => 'Itey'
 
 p "user created"
 

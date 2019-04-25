@@ -38,7 +38,7 @@
     <div class="resort-msg-list" style="background-color: <%= cycle('#C5D8F3', '#87A1C9') %>">
       <% if message.resort_id == params[:id].to_i %>
         <h4><%= message.created_at.in_time_zone('Sydney').strftime("%e %b %Y @ %H:%M") %> <br />
-            <%= message.user.email %>
+            <%= message.user.nickname %>
         </h4>
         <p><%= message.message %></p>
         </div>
