@@ -3,7 +3,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  border: 1px solid pink;
+  border: 1px solid transparent;
 }
 body {
   font-family: 'Josefin Sans', sans-serif;
@@ -80,7 +80,7 @@ body {
 
 }
 
-/* Add some content at the bottom of the video/page */
+/* search bar placeholder */
 .home-search {
   width: 450px;
   height: 80px;
@@ -100,7 +100,7 @@ body {
 }
 
 
-/* Resort Page styling */
+/* Resort show page styling */
 .resort-container, .user-container {
   width: 960px;
   padding: 2em;
@@ -119,9 +119,15 @@ body {
 .resort-info {
   background-color: white;
   border-radius: 5%;
-  margin: 1em;
+  margin: 7px;
   padding: 1em;
-  height: 272px;
+  height: 279px;
+  width: 395px;
+  border: 2px solid #e3e3e3;
+}
+
+.resort-info ul {
+  list-style: none;
 }
 
 .resort-map-image {
@@ -137,12 +143,33 @@ body {
 
 #myImg:hover {opacity: 0.8;}
 
-/* The Modal (background) */
+
+.resort-msging-container {
+  border: 2px solid #e3e3e3;
+  border-radius: 5%;
+  padding: 1em;
+}
+
+.resort-msging-container h2 {
+  padding: 1em;
+}
+
+.resort-msging-container li {
+  list-style: none;
+}
+
+.resort-msg-list p {
+  background-color: pink;
+  width: 850px;
+  padding-bottom: 1em;
+}
+
+/* The Modal for resort trail map expand */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  padding-top: 30px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -167,8 +194,8 @@ body {
   max-width: 700px;
   text-align: center;
   color: #ccc;
-  padding: 10px 0;
-  height: 150px;
+  padding: 5px 0;
+  height: 35px;
 }
 
 /* Add Animation */

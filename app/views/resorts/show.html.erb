@@ -18,50 +18,55 @@
       <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" /><div id="wf-weatherfeed"><iframe style="overflow:hidden;border:none;" allowtransparency="true" height="272" width="469" src="//www.snow-forecast.com/resorts/<%=@resort.name.gsub(" ", "-")%>/forecasts/feed/mid/m" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div>
     </div>
 
-
     <div class="resort-map">
       <%= image_tag @resort.image, :class => 'resort-map-image', :id => 'myImg', :alt => "#{@resort.name} Trail Map" if @resort.image.present? %>
     </div>
 
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-          <span class="close">&times;</span>
-          <img class="modal-content" id="img01">
-          <div id="caption"></div>
-        </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
 
   </div>
 
+  <div class="resort-msging-container">
   <h2>Buddies looking for Buddies</h2>
+  <div class="resort-msg-list">
     <% @resort.messages.order(:id => 'desc').each do |message| %>
       <% if message.resort_id == params[:id].to_i %>
         <h4><%= message.user.email %> <%= message.created_at.in_time_zone('Sydney').strftime("%H:%M %B %d, %Y") %></h4>
         <p><%= message.message %></p>
       <% end %>
     <% end %>
-    <% if logged_in? %>
-      <li>
-        <h2>post message</h2>
-        <%= form_for Message.new do |f| %>
-        <%= f.label :message %>
-        <%= f.text_area :message %>
-        <%= hidden_field_tag :resort_id, @resort.id %>
-        <%= f.submit %>
-      </li>
-    <% end %>
+  </div>
+  <% if logged_in? %>
+  <div class="resort-msg-post">
+    <li>
+      <h2>post message</h2>
+      <%= form_for Message.new do |f| %>
+      <%= f.label :message %>
+      <%= f.text_area :message %>
+      <%= hidden_field_tag :resort_id, @resort.id %>
+      <%= f.submit %>
+    </li>
+      <% end %>
     <% else %>
-        <h2>Login to post a message</h2>
-        <%= form_for(:session, url: login_path) do |f| %>
+      <h2>Login to post a message</h2>
+      <%= form_for(:session, url: login_path) do |f| %>
 
-          <%= f.label :email %>
-          <%= f.email_field :email%>
+        <%= f.label :email %>
+        <%= f.email_field :email%>
 
-          <%= f.label :password %>
-          <%= f.password_field :password %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
 
-          <%= f.submit "Log in" %>
-        <% end %>
+        <%= f.submit "Log in" %>
+      <% end %>
 
-        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   <% end %>
+    </div>
+  </div>
 </div>
