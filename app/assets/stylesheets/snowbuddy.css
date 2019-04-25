@@ -117,13 +117,11 @@ body {
 }
 
 .resort-info {
-  background-color: white;
-  border-radius: 5%;
+  background-color: #C5D8F3;
   margin: 7px;
   padding: 1em;
   height: 279px;
   width: 395px;
-  border: 2px solid #e3e3e3;
 }
 
 .resort-info ul {
@@ -145,7 +143,6 @@ body {
 
 
 .resort-msging-container {
-  border: 2px solid #e3e3e3;
   border-radius: 5%;
   padding: 1em;
 }
@@ -159,23 +156,25 @@ body {
 }
 
 .resort-msg-list p {
-  background-color: pink;
   width: 850px;
-  padding-bottom: 1em;
+  padding: 1em;
 }
 
 .msg-field {
-  width: 800px;
+  width: 864px;
   height: 200px;
+  padding: 1em;
+  margin-left: 1em;
 }
 
 .msg-submit {
-background-color: #008CBA;
+background-color: #87A1C9;
 color: white;
 height: 40px;
 width: auto;
 min-width: 300px;
 font-size: 14px;
+margin-left: 1em;
 
 }
 

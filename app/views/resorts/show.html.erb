@@ -7,15 +7,16 @@
     <div class="resort-info">
       <h1><%= @resort.name %></h1>
       <ul>
+        <li><%= link_to @resort.homepage, @resort.homepage %></li>
+        <br />
         <li>Region: <%= @resort.region %> </li>
-        <li>Homepage: <%= link_to @resort.homepage, @resort.homepage %></li>
         <li>Number of Lifts: <%= @resort.lifts %></li>
         <li>Peak Elevation: <%= @resort.elevation %></li>
-        <li>Skiable area <%= @resort.area %> acres</li>
+        <li>Skiable area: <%= @resort.area %> acres</li>
       </ul>
     </div>
     <div class="resort-weather">
-      <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" /><div id="wf-weatherfeed"><iframe style="overflow:hidden;border:none;" allowtransparency="true" height="272" width="469" src="//www.snow-forecast.com/resorts/<%=@resort.name.gsub(" ", "-")%>/forecasts/feed/mid/m" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div>
+      <link href="//www.snow-forecast.com/stylesheets/feed.css" media="screen" rel="stylesheet" type="text/css" /><div id="wf-weatherfeed"><iframe style="overflow:hidden;border:none;background-color:#C5D8F3" allowtransparency="true" height="279" width="469" src="//www.snow-forecast.com/resorts/<%=@resort.name.gsub(" ", "-")%>/forecasts/feed/mid/m" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe></div>
     </div>
 
     <div class="resort-map">
@@ -33,39 +34,38 @@
 
   <div class="resort-msging-container">
   <h2>Buddies looking for Buddies</h2>
-  <div class="resort-msg-list">
     <% @resort.messages.order(:id => 'desc').each do |message| %>
+    <div class="resort-msg-list" style="background-color: <%= cycle('#C5D8F3', '#87A1C9') %>">
       <% if message.resort_id == params[:id].to_i %>
         <h4><%= message.created_at.in_time_zone('Sydney').strftime("%e %b %Y @ %H:%M") %> <br />
             <%= message.user.email %>
         </h4>
         <p><%= message.message %></p>
+        </div>
       <% end %>
     <% end %>
   </div>
   <% if logged_in? %>
   <div class="resort-msg-post">
-    <li>
-      <%= form_for Message.new do |f| %>
+    <%= form_for Message.new do |f| %>
       <%= f.text_area :message, :class => "msg-field" %>
       <%= hidden_field_tag :resort_id, @resort.id %>
       <%= f.submit "Submit Message to #{@resort.name}", :class => "msg-submit" %>
-    </li>
-      <% end %>
-    <% else %>
-      <h2>Login to post a message</h2>
-      <%= form_for(:session, url: login_path) do |f| %>
+    <% end %>
+  <% else %>
+    <h2>Login to post a message</h2>
+    <%= form_for(:session, url: login_path) do |f| %>
 
-        <%= f.label :email %>
-        <%= f.email_field :email%>
+      <%= f.label :email %>
+      <%= f.email_field :email%>
 
-        <%= f.label :password %>
-        <%= f.password_field :password %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
 
-        <%= f.submit "Log in" %>
-      <% end %>
+      <%= f.submit "Log in" %>
+    <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   <% end %>
     </div>
   </div>
