@@ -36,7 +36,9 @@
   <div class="resort-msg-list">
     <% @resort.messages.order(:id => 'desc').each do |message| %>
       <% if message.resort_id == params[:id].to_i %>
-        <h4><%= message.user.email %> <%= message.created_at.in_time_zone('Sydney').strftime("%H:%M %B %d, %Y") %></h4>
+        <h4><%= message.created_at.in_time_zone('Sydney').strftime("%e %b %Y @ %H:%M") %> <br />
+            <%= message.user.email %>
+        </h4>
         <p><%= message.message %></p>
       <% end %>
     <% end %>
@@ -44,12 +46,10 @@
   <% if logged_in? %>
   <div class="resort-msg-post">
     <li>
-      <h2>post message</h2>
       <%= form_for Message.new do |f| %>
-      <%= f.label :message %>
-      <%= f.text_area :message %>
+      <%= f.text_area :message, :class => "msg-field" %>
       <%= hidden_field_tag :resort_id, @resort.id %>
-      <%= f.submit %>
+      <%= f.submit "Submit Message to #{@resort.name}", :class => "msg-submit" %>
     </li>
       <% end %>
     <% else %>

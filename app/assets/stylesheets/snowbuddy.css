@@ -11,7 +11,7 @@ body {
 .navbar {
   font-size: 18px;
   padding-bottom: 10px;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(239, 239, 239, 0.5);
 
 }
 .main-nav {
@@ -105,7 +105,7 @@ body {
   width: 960px;
   padding: 2em;
   margin: 0 auto;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(239, 239, 239, 0.5);
   margin-top: 350px;
 }
 
@@ -162,6 +162,21 @@ body {
   background-color: pink;
   width: 850px;
   padding-bottom: 1em;
+}
+
+.msg-field {
+  width: 800px;
+  height: 200px;
+}
+
+.msg-submit {
+background-color: #008CBA;
+color: white;
+height: 40px;
+width: auto;
+min-width: 300px;
+font-size: 14px;
+
 }
 
 /* The Modal for resort trail map expand */
