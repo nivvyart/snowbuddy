@@ -12,6 +12,7 @@ body {
   font-size: 18px;
   padding-bottom: 10px;
   background-color: rgba(239, 239, 239, 0.5);
+  position: sticky; top: 0;
 
 }
 .main-nav {
@@ -52,7 +53,6 @@ body {
 }
 
 .nav-container{
-  width: 960px;
   margin: 0 auto;
 }
 
