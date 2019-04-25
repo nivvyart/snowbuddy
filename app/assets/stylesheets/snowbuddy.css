@@ -254,3 +254,15 @@ margin-left: 1em;
     width: 100%;
   }
 }
+
+/* Resort Index specific styling */
+.resort-thumbnail img {
+  height: 200px;
+}
+
+.resort-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
