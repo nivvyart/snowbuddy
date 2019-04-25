@@ -4,10 +4,10 @@
 
 
 <div class="resort-list">
-<% @resorts.each do |resort| %>
+<% @resorts.order(:region => 'asc').order(:name => 'asc').each do |resort| %>
   <div class="resort-list-item">
   <h3>
-    <%= link_to resort.name, resort_path(resort.id) %>.
+    <%= link_to resort.name, resort_path(resort.id) %> - <%= resort.region %>
   </h3>
     <%= link_to (image_tag resort.thumbnail), resort_path(resort.id), :class => "resort-thumbnail" %>
   </div>

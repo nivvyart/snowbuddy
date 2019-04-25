@@ -2,6 +2,7 @@ User.destroy_all
 u1 = User.create :email => 'adrian@snowbuddy.com', :password => 'asdasd', :nickname => 'Nivvy'
 u2 = User.create :email => 'roy@snowbuddy.com', :password => 'asdasd', :nickname => 'Colorado Kid'
 u3 = User.create :email => 'nico@snowbuddy.com', :password => 'asdasd', :nickname => 'Itey'
+u4 = User.create :email => 'a@a.com', :password => 'asdasd', :nickname => 'Test account'
 
 p "user created"
 
@@ -14,8 +15,7 @@ r5 = Resort.create :name => 'Whakapapa', :region => 'New Zealand', :homepage => 
 r6 = Resort.create :name => 'Gargellen', :region => 'Austria', :homepage => 'https://www.montafon.at/en/my-montafon/mountain-villages/gargellen', :lifts => 8, :elevation => '2482', :area => '900', :image => 'https://skimap.org/data/2704/2205/1497173046jpg_render.jpg', :thumbnail => 'https://www.montafon.at/1-Bilder/1-Montafon/Region-Orte/Gargellen/Winter/image-thumb__4559__content-slider-img/Panorama-Gargellen-Winter-Montafon-Tourismus-Patrick-Saely-2.jpeg'
 r7 = Resort.create :name => 'Copper Mountain', :region => 'Colorado', :homepage => 'http://coppercolorado.com', :lifts => 23, :elevation => '3735', :area => '2465', :image => 'https://skimap.org/data/509/2200/1542498916jpg_render.jpg', :thumbnail => 'https://www.coloradormr.com/custimages/Website%20Pages/Winter%20Activities/CopperMountainWinter.png'
 r8 = Resort.create :name => 'Winter Park', :region => 'Colorado', :homepage => 'http://www.winterparkresort.com', :lifts => 25, :elevation => '3676', :area => '3081', :image => 'https://skimap.org/data/503/916/1550512060jpg_render.jpg', :thumbnail => 'https://winterparkescapes.com/wp-content/uploads/2018/06/telluride-2228785_1280.jpg'
-#r7 = Resort.create :name => 'Arapahoe Basin', :region => 'Colorado', :homepage => 'http://arapahoebasin.com/', :lifts => 9, :elevation => '3978', :area => '1458', :image => 'https://skimap.org/data/513/2200/1533603005.jpg'
-#r8 = Resort.create :name => 'Arapahoe Basin', :region => 'Colorado', :homepage => 'http://arapahoebasin.com/', :lifts => 9, :elevation => '3978', :area => '1458', :image => 'https://skimap.org/data/513/2200/1533603005.jpg'
+r9 = Resort.create :name => 'Perisher Blue', :region => 'Australia', :homepage => 'https://www.perisher.com.au/', :lifts => 47, :elevation => '2054', :area => '1245', :image => 'https://skimap.org/data/1173/3096/1524968478jpg_render.jpg', :thumbnail => 'https://img6.onthesnow.com/image/xl/48/perisher_resort_australia_1_48539.jpg'
 
 p "resort created"
 
