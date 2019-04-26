@@ -1,6 +1,6 @@
 //wait for window to load before getting resources
 window.onload = function(){
-
+  console.log('window load fired');
   // nav bar JS
   let mainNav = document.getElementById('js-menu');
   let navBarToggle = document.getElementById('js-navbar-toggle');
@@ -13,21 +13,25 @@ window.onload = function(){
   // Get the modal
   let modal = document.getElementById('myModal');
 
-  // image inside modal, using alt text as caption 
+  // image inside modal, using alt text as caption
   let img = document.getElementById('myImg');
   let modalImg = document.getElementById("img01");
   let captionText = document.getElementById("caption");
-  img.onclick = function(){
-    modal.style.display = "block";
-    modalImg.src = this.src;
-    captionText.innerHTML = this.alt;
+  if (img) {
+    img.onclick = function(){
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    }
   }
 
   // close
   let span = document.getElementsByClassName("close")[0];
 
   // close
-  span.onclick = function() {
-    modal.style.display = "none";
+  if (span) {
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
   }
 }

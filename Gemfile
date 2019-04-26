@@ -27,6 +27,12 @@ gem 'bcrypt', '~> 3.1.7'
 #cloudinary
 gem 'cloudinary'
 
+#jquery
+gem 'jquery-rails'
+
+#ransack
+gem 'ransack'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

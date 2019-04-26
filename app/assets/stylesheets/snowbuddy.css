@@ -276,3 +276,22 @@ margin-left: 1em;
 .about-container p {
   font-size: 17px;
 }
+
+.easy-autocomplete{
+  background-color: transparent;
+  width: 400px;
+  text-align: center;
+  border: none !important;
+  border-color: transparent !important;
+  margin-top: 15px;
+  margin-left: 22px;
+  border-radius: 20px;
+}
+
+.eac-category, .eac-item {
+  color: black;
+}
+
+.eac-item b {
+  color: blue;
+}

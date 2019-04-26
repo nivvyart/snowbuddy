@@ -31,6 +31,7 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   root :to => 'pages#home'
+  get :search, controller: :main
   get '/about' => 'pages#about'
 
   #resorts
