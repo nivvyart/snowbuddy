@@ -1,6 +1,5 @@
 //wait for window to load before getting resources
-window.onload = function(){
-  console.log('window load fired');
+document.addEventListener("turbolinks:load", function(){
   // nav bar JS
   let mainNav = document.getElementById('js-menu');
   let navBarToggle = document.getElementById('js-navbar-toggle');
@@ -34,4 +33,4 @@ window.onload = function(){
       modal.style.display = "none";
     }
   }
-}
+})

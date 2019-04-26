@@ -248,8 +248,8 @@
   z-index: 2;
 }
 .easy-autocomplete-container ul {
-  background: none repeat scroll 0 0 #ffffff;
   border-top: 1px dotted #ccc;
+  background-color: rgba(239, 239, 239, 0.5);
   display: none;
   margin-top: 0;
   padding-bottom: 0;
@@ -258,7 +258,8 @@
   top: -1px;
 }
 .easy-autocomplete-container ul li, .easy-autocomplete-container ul .eac-category {
-  background: pink;
+  background: transparent;
+
   border-color: #ccc;
   border-image: none;
   border-style: solid;
@@ -273,7 +274,7 @@
   border-width: 0 1px 1px;
 }
 .easy-autocomplete-container ul li.selected {
-  background: none repeat scroll 0 0 #ebebeb;
+  background: none repeat scroll 0 0 #ccc;
   cursor: pointer;
 }
 .easy-autocomplete-container ul li.selected div {
