@@ -1,0 +1,29 @@
+<%= image_tag "soloski.jpg", :class => 'resort-background'%>
+
+<div class="user-container">
+
+<h1>future edit page</h1>
+
+<% if flash[:message].present? %>
+  <h2><%= flash[:message] %></h2>
+<% end %>
+
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email%>
+
+  <%= f.label :nickname %>
+  <%= f.text_field :nickname %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password%>
+
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "update details" %>
+<% end %>
+
+</div>

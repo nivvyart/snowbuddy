@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   resources :users # :except or :only => [:new, :xxx]
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
-  get '/account' => 'users#show'
+  get '/account' => 'users#edit'
 
   #session control
   get    '/login' => 'sessions#new'
