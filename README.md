@@ -29,7 +29,7 @@ A WebApp to help people find others to Ski and Snowboard with, Skibuddies. Also 
 * About page - Update
   * Just lorem atm...
 * User
-  * Edit user page
+  * ~Edit user page~ - completed 270419
   * Add user image
   * Add user ability
   * Add user home resort
